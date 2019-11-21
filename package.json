@@ -1,0 +1,42 @@
+{
+  "name": "peertube-plugin-recaptcha",
+  "description": "PeerTube plugin adding ReCaptcha v2 to the signup",
+  "version": "0.0.1",
+  "author": "Rigel Kent",
+  "bugs": "https://framagit.org/framasoft/peertube/peertube-plugin-quickstart/issues",
+  "clientScripts": [
+    {
+      "script": "dist/signup-client-plugin.js",
+      "scopes": [
+        "signup"
+      ]
+    }
+  ],
+  "css": [
+    "assets/style.css"
+  ],
+  "dependencies": {
+    "loadjs": "^4.0.1"
+  },
+  "devDependencies": {
+    "@purtuga/esm-webpack-plugin": "^1.1.1",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  },
+  "engine": {
+    "peertube": ">=2.1.0"
+  },
+  "homepage": "https://framagit.org/framasoft/peertube/peertube-plugin-recaptcha",
+  "keywords": [
+    "peertube",
+    "plugin"
+  ],
+  "library": "./main.js",
+  "license": "AGPL-3.0-or-later",
+  "repository": "https://framagit.org/framasoft/peertube/peertube-plugin-recaptcha",
+  "scripts": {
+    "build": "webpack --mode=production"
+  },
+  "staticDirs": {},
+  "translations": {}
+}
