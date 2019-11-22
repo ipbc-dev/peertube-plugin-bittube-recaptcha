@@ -16,7 +16,8 @@
     "assets/style.css"
   ],
   "dependencies": {
-    "loadjs": "^4.0.1"
+    "loadjs": "^4.0.1",
+    "simple-get": "^3.1.0"
   },
   "devDependencies": {
     "@purtuga/esm-webpack-plugin": "^1.1.1",

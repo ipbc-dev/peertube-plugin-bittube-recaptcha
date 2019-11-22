@@ -1,17 +1,4 @@
-var _request = require("request")
-
-const request = function(options) {
-  return new Promise((resolve,reject) => {
-    _request(options, (error, response, body) => {
-      if (response) {
-        return resolve(response)
-      }
-      if (error) {
-        return reject(error)
-      }
-    })
-  })
-}
+const get = require("simple-get")
 
 async function register({
   registerHook,
@@ -55,11 +42,7 @@ module.exports = {
 async function verifyCaptcha (result, params, settingsManager) {
   // g-recaptcha-response is the key that browser will generate upon form submit.
   // if its blank or null means user has not selected the captcha, so return the error.
-  if (
-    params.body["g-recaptcha-response"] === undefined ||
-    params.body["g-recaptcha-response"] === "" ||
-    params.body["g-recaptcha-response"] === null
-  ) {
+  if (!params.body["g-recaptcha-response"]) {
     return { allowed: false, errorMessage: "Captcha wasn't filled" }
   }
 
@@ -75,7 +58,7 @@ async function verifyCaptcha (result, params, settingsManager) {
     "&remoteip=" +
     params.connection.remoteAddress
 
-  return await request(verificationUrl, (error, response, body) => {
+  return get(verificationUrl, function (err, res, body) {
     body = JSON.parse(body)
     if (body.success !== undefined && !body.success) {
       return { allowed: false, errorMessage: "Wrong captcha" }
