@@ -39,7 +39,7 @@ function initRC(registerHook, peertubeHelpers) {
     )
 
     registerHook({
-      target: "filter:signup.register.body",
+      target: "filter:api.signup.registration.create.params",
       handler: body =>
         Object.assign({}, body, {
           "g-recaptcha-response": window.ReCaptchaLoadCallbackResponse

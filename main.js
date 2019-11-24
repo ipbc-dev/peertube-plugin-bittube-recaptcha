@@ -56,7 +56,7 @@ async function verifyCaptcha (result, params, settingsManager) {
     "&response=" +
     params.body["g-recaptcha-response"] +
     "&remoteip=" +
-    params.connection.remoteAddress
+    params.ip
 
   return get(verificationUrl, function (err, res, body) {
     body = JSON.parse(body)
