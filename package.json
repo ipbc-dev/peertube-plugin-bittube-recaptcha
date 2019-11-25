@@ -1,7 +1,7 @@
 {
   "name": "peertube-plugin-recaptcha",
   "description": "PeerTube plugin adding ReCaptcha v2 to the signup",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Rigel Kent",
   "bugs": "https://framagit.org/rigelk/peertube-plugin-recaptcha/issues",
   "clientScripts": [
