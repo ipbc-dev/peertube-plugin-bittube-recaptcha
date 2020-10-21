@@ -1,9 +1,15 @@
 import loadjs from "loadjs"
 
 function register({ registerHook, peertubeHelpers }) {
-  initRC(registerHook, peertubeHelpers).catch(err =>
-    console.error("Cannot initialize recaptcha plugin", err)
-  )
+  // Hook for appending recaptcha to register form
+  registerHook({
+    target: "action:signup.register.init",
+    handler: () => {
+      initRC(registerHook, peertubeHelpers).catch(err =>
+        console.error("Cannot initialize recaptcha plugin", err)
+      )
+    }
+  })
 }
 
 export { register }
