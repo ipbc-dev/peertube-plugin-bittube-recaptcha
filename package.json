@@ -1,9 +1,9 @@
 {
-  "name": "peertube-plugin-recaptcha",
-  "description": "PeerTube plugin adding ReCaptcha v2 to the signup",
-  "version": "0.0.2",
-  "author": "Rigel Kent",
-  "bugs": "https://framagit.org/rigelk/peertube-plugin-recaptcha/issues",
+  "name": "peertube-plugin-bittube-recaptcha",
+  "description": "PeerTube plugin adding ReCaptcha v2 to the signup, forked from the original, fixed by BitTube",
+  "version": "0.0.3",
+  "author": "Rigel Kent & BitTube",
+  "bugs": "https://github.com/ipbc-dev/peertube-plugin-bittube-recaptcha/issues",
   "clientScripts": [
     {
       "script": "dist/signup-client-plugin.js",
@@ -27,7 +27,7 @@
   "engine": {
     "peertube": ">=2.1.0"
   },
-  "homepage": "https://framagit.org/rigelk/peertube-plugin-recaptcha",
+  "homepage": "https://github.com/ipbc-dev/peertube-plugin-bittube-recaptcha",
   "keywords": [
     "peertube",
     "plugin",
@@ -35,7 +35,7 @@
   ],
   "library": "./main.js",
   "license": "AGPL-3.0-or-later",
-  "repository": "https://framagit.org/rigelk/peertube-plugin-recaptcha",
+  "repository": "https://github.com/ipbc-dev/peertube-plugin-bittube-recaptcha",
   "scripts": {
     "build": "webpack --mode=production"
   },
