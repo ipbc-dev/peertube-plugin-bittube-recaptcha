@@ -1,7 +1,7 @@
 {
   "name": "peertube-plugin-bittube-recaptcha",
   "description": "PeerTube plugin adding ReCaptcha v2 to the signup, forked from the original, fixed by BitTube",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "author": "Rigel Kent & BitTube",
   "bugs": "https://github.com/ipbc-dev/peertube-plugin-bittube-recaptcha/issues",
   "clientScripts": [
