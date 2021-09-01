@@ -59,10 +59,18 @@ async function verifyCaptcha (result, params, settingsManager) {
     params.ip
 
   return get(verificationUrl, function (err, res, body) {
-    body = JSON.parse(body)
-    if (body.success !== undefined && !body.success) {
-      return { allowed: false, errorMessage: "Wrong captcha" }
+    if (body) {
+      try {
+        body = JSON.parse(body)
+        if (body.success !== undefined && !body.success) {
+          return { allowed: false, errorMessage: "Wrong captcha" }
+        }
+        return result
+      } catch (error) {
+        console.error('Invalid response from recaptcha', body, error)
+        return { allowed: false, errorMessage: "Invalid response from recaptcha" }
+      }
     }
-    return result
+    return { allowed: false, errorMessage: "Communication error with recaptcha" }
   })
 }
